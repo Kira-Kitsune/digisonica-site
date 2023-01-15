@@ -1,14 +1,9 @@
-import type { Component } from 'solid-js';
-import {
-    FaBrandsDiscord,
-    FaBrandsTwitter,
-    FaBrandsTwitch,
-    FaBrandsYoutube,
-} from 'solid-icons/fa';
+import { Component, For } from 'solid-js';
 import TextButton from './TextButton';
 import PFP from '../assets/images/desynkro_logo_01.png';
 import IconButton from './IconButton';
 import YellowButton from './YellowButton';
+import { Socials, Supports } from '../utils/consts';
 
 const Footer: Component = () => {
     return (
@@ -17,38 +12,20 @@ const Footer: Component = () => {
                 <div class="flex h-full flex-col p-2 max-md:items-center md:flex-[2]">
                     <img src={PFP} class="mb-6 w-24" />
                     <div class="flex flex-row gap-4">
-                        <IconButton
-                            Icon={FaBrandsYoutube}
-                            href="https://youtube.com/DeSynkro"
-                        />
-                        <IconButton
-                            Icon={FaBrandsTwitch}
-                            href="https://twitch.com/DeSynkro"
-                        />
-                        <IconButton
-                            Icon={FaBrandsTwitter}
-                            href="https://twitter.com/DeSynkro"
-                        />
-                        <IconButton
-                            Icon={FaBrandsDiscord}
-                            href="https://discord.gg/invite/qptZkCj"
-                        />
+                        <For each={Socials}>
+                            {({ Icon, href }) => (
+                                <IconButton Icon={Icon} href={href} />
+                            )}
+                        </For>
                     </div>
                 </div>
                 <div class="m-2 flex h-full flex-col max-md:items-center md:flex-1">
                     <span class="mb-2 text-xl font-bold">Support Me</span>
-                    <TextButton
-                        text="PayPal"
-                        href="https://paypal.me/iagorosa"
-                    />
-                    <TextButton
-                        text="Ko-fi"
-                        href="https://ko-fi.com/desynkro"
-                    />
-                    <TextButton
-                        text="Merch"
-                        href="https://store.streamelements.com/desynkro"
-                    />
+                    <For each={Supports}>
+                        {({ text, href }) => (
+                            <TextButton text={text} href={href} />
+                        )}
+                    </For>
                 </div>
                 <div class="m-2 flex h-full flex-col max-md:items-center md:flex-1">
                     <span class="mb-2 text-xl font-bold">Projects</span>
@@ -72,49 +49,5 @@ const Footer: Component = () => {
         </footer>
     );
 };
-
-{
-    /* <SocialTitle text="Socials" />
-                <div class="mb-8 grid grid-cols-2 gap-x-8 gap-y-0 md:mb-16  md:grid-cols-4 md:gap-32">
-                    <SocialIcon
-                        href="https://youtube.com/DeSynkro"
-                        Icon={FaBrandsYoutube}
-                        text="YouTube"
-                    />
-                    <SocialIcon
-                        href="https://twitch.tv/DeSynkro"
-                        Icon={FaBrandsTwitch}
-                        text="Twitch"
-                    />
-                    <SocialIcon
-                        href="https://twitter.com/DeSynkro"
-                        Icon={FaBrandsTwitter}
-                        text="Twitter"
-                    />
-                    <SocialIcon
-                        href="https://discord.gg/invite/qptZkCj"
-                        Icon={FaBrandsDiscord}
-                        text="Discord"
-                    />
-                </div>
-                <SocialTitle text="Support Me" />
-                <div class="grid grid-cols-2 gap-x-8 gap-y-0 md:mb-8 md:grid-cols-3 md:gap-32">
-                    <SocialIcon
-                        href="https://store.streamelements.com/desynkro"
-                        Icon={FaSolidShirt}
-                        text="Merch"
-                    />
-                    <SocialIcon
-                        href="https://paypal.me/iagorosa"
-                        Icon={FaBrandsPaypal}
-                        text="PayPal"
-                    />
-                    <SocialIcon
-                        href="https://ko-fi.com/desynkro"
-                        Icon={SiKofi}
-                        text="Ko-fi"
-                    />
-                </div> */
-}
 
 export default Footer;
