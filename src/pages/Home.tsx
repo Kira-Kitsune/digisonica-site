@@ -28,8 +28,8 @@ const Home: Component = () => {
                     />
                     <div class="flex flex-col justify-center text-4xl max-lg:text-center">
                         <p class="mb-8">
-                            DigiSonica is a Music label created and managed by 2
-                            content creator friends.
+                            DigiSonica is a Music label created and managed by
+                            me.
                         </p>
                         <p>
                             Our goal is to provide High Quality, Accessible and
