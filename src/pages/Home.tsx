@@ -25,6 +25,7 @@ const Home: Component = () => {
                         src={DigisonicaLogo}
                         alt="DigiSonica Logo"
                         class="h-72 w-72 lg:h-[36rem] lg:w-[36rem]"
+                        loading="lazy"
                     />
                     <div class="flex flex-col justify-center text-4xl max-lg:text-center">
                         <p class="mb-8">
