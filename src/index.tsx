@@ -1,15 +1,17 @@
 /* @refresh reload */
 import './index.css';
 import { render } from 'solid-js/web';
-import { Router } from '@solidjs/router';
+import { Router, Route } from '@solidjs/router';
 
 import App from './App';
+import Home from './pages/Home';
+
 import type { Component } from 'solid-js';
 
 const WrappedApp: Component = () => {
     return (
-        <Router>
-            <App />
+        <Router root={App}>
+            <Route path="/" component={Home} />
         </Router>
     );
 };

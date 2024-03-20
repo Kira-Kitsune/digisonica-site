@@ -1,16 +1,13 @@
-import type { Component } from 'solid-js';
 import Navbar from './components/Navbar';
-import { Route, Routes } from '@solidjs/router';
-import Home from './pages/Home';
 import Footer from './components/Footer';
+import type { Component } from 'solid-js';
+import type { RouteSectionProps } from '@solidjs/router';
 
-const App: Component = () => {
+const App: Component<RouteSectionProps<unknown>> = (props) => {
     return (
         <>
             <Navbar />
-            <Routes>
-                <Route path="/" component={Home} />
-            </Routes>
+            {props.children}
             <Footer />
         </>
     );
