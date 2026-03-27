@@ -17,14 +17,14 @@ const ICON_SIZE = 60;
 
 const Home: Component = () => {
     return (
-        <div class="mt-[5.625rem] flex w-full flex-col text-xl text-neutral-100">
+        <div class="mt-22.5 flex w-full flex-col text-xl text-neutral-100">
             <div class="z-30 flex w-full flex-col items-center bg-digisonica-02 py-8 shadow-desynkro 2xl:bg-digisonica 2xl:bg-bottom">
                 <TitleBar text="DigiSonica by DeSynkro" />
                 <div class="m-16 flex w-11/12 justify-center gap-8 max-xl:flex-col max-xl:items-center lg:w-4/5 xl:items-center">
                     <img
                         src={DigisonicaLogo}
                         alt="DigiSonica Logo"
-                        class="h-72 w-72 lg:h-[36rem] lg:w-[36rem]"
+                        class="h-72 w-72 lg:h-144 lg:w-xl"
                         loading="lazy"
                     />
                     <div class="flex flex-col justify-center text-4xl max-lg:text-center">
@@ -92,7 +92,7 @@ const Home: Component = () => {
                     </div>
                 </div>
             </div>
-            <div class="z-20 flex w-full flex-col items-center justify-center bg-gradient-to-b from-[#002b39] to-[#021c23] py-16 shadow-desynkro">
+            <div class="z-20 flex w-full flex-col items-center justify-center bg-linear-to-b from-[#002b39] to-[#021c23] py-16 shadow-desynkro">
                 <TitleBar text="Our Albums" />
                 <div class="mt-12 flex items-center justify-center gap-12 max-md:flex-col lg:gap-16">
                     <SpotifyEmbed

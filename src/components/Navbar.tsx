@@ -17,7 +17,7 @@ const Navbar: Component = () => {
 
     return (
         <>
-            <header class="fixed bottom-0 top-0 z-50 flex h-[5.625rem] w-full items-center bg-nav px-10 shadow-desynkro">
+            <header class="fixed bottom-0 top-0 z-50 flex h-22.5 w-full items-center bg-nav px-10 shadow-desynkro">
                 <img
                     src={Logo}
                     height={76}
